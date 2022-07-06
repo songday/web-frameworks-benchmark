@@ -12,7 +12,8 @@ public class BookService {
         book.setId(1);
         book.setTitle("Book title");
         book.setPreview("Book preview");
-        book.setCreatedAt(new Date());
+        Date now = new Date();
+        book.setCreatedAt(now.getTime());
         return book;
     }
 }

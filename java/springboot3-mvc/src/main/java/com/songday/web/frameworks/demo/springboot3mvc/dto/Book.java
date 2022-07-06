@@ -9,5 +9,5 @@ public class Book {
     private long id;
     private String title;
     private String preview;
-    private Date createdAt;
+    private long createdAt;
 }
