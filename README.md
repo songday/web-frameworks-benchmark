@@ -12,12 +12,18 @@ Go w/ fasthttp library| Go 1.18.3 | N/A          | N/A         |N/A
 Axum| Rust 1.62.0 | N/A          | N/A         |N/A
 Warp| Rust 1.62.0 | N/A          | N/A         |N/A
 
-
 ## Testing env.
+
+**Testing services and benchmarking tool were running on the same laptop.**
+
+Hardwares of Laptop:
 ```
 1. CPU: Intel(R) Core(TM) i3 CPU       M 380  @ 2.53GHz   2.53 GHz
-1. RAM: 8G (4G * 2)
+1. RAM: 8G DDR3 (4G * 2)
 1. HardDisk: 500G (Not SSD)
-1. OS: Windows 10 21H2 x64 Family Edition
 ```
-Host and client were on the same machine.
+
+OS:
+```
+Windows 10 21H2 x64 Family Edition
+```
