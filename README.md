@@ -2,6 +2,12 @@
 
 Compare popular web frameworks
 
+What does program do?
+1. Generate an id by [SCRU128](https://github.com/scru128/spec)
+1. Saving into database
+1. Select the latest record from database
+1. Serialize into JSON string
+
 ## Results
 Framework| Language | Package Size(bytes) | Start time(ms) |Mem usage(bytes)
 -----|-----|-----|-----|-----
