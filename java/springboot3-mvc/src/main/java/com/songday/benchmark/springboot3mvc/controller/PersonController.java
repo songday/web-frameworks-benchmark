@@ -1,4 +1,4 @@
-package com.songday.benchmark.springboot3mvc;
+package com.songday.benchmark.springboot3mvc.controller;
 
 import com.songday.benchmark.springboot3mvc.model.Person;
 import com.songday.benchmark.springboot3mvc.service.PersonService;
