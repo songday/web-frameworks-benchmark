@@ -1,3 +1,4 @@
+pub(crate) mod db;
 pub(crate) mod dto;
 pub(crate) mod facade;
 pub mod server;
@@ -14,6 +15,14 @@ struct Error {
 
 impl From<SystemTimeError> for Error {
     fn from(e: SystemTimeError) -> Self {
+        Error {
+            detail: format!("{:?}", e),
+        }
+    }
+}
+
+impl From<sqlx::Error> for Error {
+    fn from(e: sqlx::Error) -> Self {
         Error {
             detail: format!("{:?}", e),
         }
