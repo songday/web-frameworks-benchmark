@@ -10,9 +10,9 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 @Configuration
 public class HandlersRouter {
     @Bean
-    public RouterFunction<ServerResponse> functionalRoutes(PersonHandler personHandler) {
+    public RouterFunction<ServerResponse> functionalRoutes(BookHandler bookHandler) {
         return RouterFunctions
-                .route(RequestPredicates.GET("/person/get") , personHandler::getPerson)
+                .route(RequestPredicates.GET("/book/latest") , bookHandler::getBook)
                 ;
     }
 }

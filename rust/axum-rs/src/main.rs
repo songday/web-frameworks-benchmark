@@ -8,6 +8,7 @@ fn main() {
         .thread_name("web-framework-testing")
         .thread_stack_size(3 * 1024 * 1024)
         .enable_io()
+        .enable_time()
         .build()
         .unwrap();
     runtime.block_on(app::start_app());

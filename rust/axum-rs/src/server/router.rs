@@ -4,5 +4,5 @@ use axum::Router;
 use crate::facade::book;
 
 pub(crate) fn gen_router() -> Router {
-    Router::new().route("/", get(book::get_book))
+    Router::new().route("/book/latest", get(book::get_book))
 }
