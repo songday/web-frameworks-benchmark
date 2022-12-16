@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import java.time.Clock;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Service
@@ -19,7 +21,7 @@ public class BookService {
     }
 
     public Mono<Book> saveBook(Book book) {
-        return bookRepository.save(book);
+        return bookRepository.insertNew(book);
     }
 
     public Book genBook() {
@@ -28,7 +30,7 @@ public class BookService {
         book.setTitle("Book title");
         book.setPreview("Preview content of this book");
         book.setPrice((short) 20);
-        book.setCreatedAt(new Date());
+        book.setCreatedAt(LocalDateTime.now(Clock.systemUTC()));
         return book;
     }
 

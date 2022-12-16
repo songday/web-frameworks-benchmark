@@ -1,6 +1,6 @@
 package com.songday.benchmark.springboot3mvc.controller;
 
-import com.songday.benchmark.springboot3mvc.Response;
+import com.songday.benchmark.springboot3mvc.dto.Response;
 import com.songday.benchmark.springboot3mvc.model.Book;
 import com.songday.benchmark.springboot3mvc.service.BookService;
 import lombok.RequiredArgsConstructor;

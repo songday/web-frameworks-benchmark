@@ -1,5 +1,7 @@
 package com.songday.benchmark.springboot3webflux.handler;
 
+import com.songday.benchmark.springboot3webflux.dto.Response;
+import com.songday.benchmark.springboot3webflux.model.Book;
 import com.songday.benchmark.springboot3webflux.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -12,13 +14,21 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class BookHandler {
     private final BookService bookService;
+
     public Mono<ServerResponse> getBook(ServerRequest req) {
-        return ServerResponse.ok()
+        Book book = bookService.genBook();
+        return bookService.saveBook(book).then(bookService.getLatestBook()).map(b -> {
+            Response<Book> res = new Response<>();
+            res.setStatus(200);
+            res.setData(b);
+            return res;
+        }).flatMap(r -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(
-                        bookService.saveBook(bookService.genBook()).then(bookService.getLatestBook())
-                        ,String.class
-                );
+                        Mono.just(r)
+                        , Response.class
+                )
+        );
     }
 
 }

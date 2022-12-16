@@ -1,4 +1,4 @@
-package com.songday.benchmark.springboot3mvc;
+package com.songday.benchmark.springboot3mvc.dto;
 
 import lombok.Data;
 
